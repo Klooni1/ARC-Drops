@@ -1,14 +1,29 @@
 Tämän projektin aihe perustuu uuteen ARC Raiders pelin "ARC" robottivihollisiin, jotka tuhoutuessa pudottavat erilaisia materiaaleja. Tässä sovelluksessa käyttäjät pystyvät jakamaan erityyppiset ARC:it ja niiden mahdolliset pudotettavat materiaalit.
+Jos et tiedä pelistä mitään voit aina keksiä omia asioita käyttäessä sovellusta.
 
-# Toiminnot:
-Käyttäjä luo tunnuksen ja salasanan sovelluksen käyttämiseen.
+# Kuinka käyttää sovellusta
+Tein itse sovelluksen Windows-käyttöjärjestelmällä, joten en ole varma toimiiko sovellus muilla järjestelmillä, mutta Windowsilla sovellus ainakin toimii seuraavasti:
 
-Käyttäjä voi lisätä/muokata/poistaa eri vihollisten tietoja (vihollistyypit ja niiden palkinnot, ehkä  myös kuva vihollisesta).
+Lataamalla koko kansio "sw"
 
-Kun kuka tahansa käyttäjä lisää uuden vihollisen tiedot, kaikki muut käyttäjät pystyvät myös näkemään sen.
+Avaamalla kansion sisällä oleva "app.py" (Huom. sovellus tulee avata kansion sw sisällä)
 
-Käyttäjä voi etsiä vihollisen nimen mukaan kyseisen tietokohteen, mikäli se on lisätty tietokantaan. (Ehkä myös etsiä kaikki viholliset, jotka pudottavat tietyn esineen)
+Kopioimalla sivun "osoite" mihin tahansa selaimeen
 
+Tämän jälkeen sovelluksen pitäisi toimia
+
+Jos haluat resetoida sovelluksen, poista kansiosta sw "database.db" ja tyhjennä selaimesta evästeet.
+
+# Tällä hetkellä toimivat toiminnot:
+Käyttäjä voi luoda tunnuksen ja salasanan
+
+Käyttäjä voi lisätä/muokata/poistaa omia tietokohteita vihollisista (vihollisten nimet ja mahdolliset palkinnot).
+
+Kaikkien käyttäjien lisäämät viholliset ovat nähtävissä kaikille (myös niille, joilla ei ole käytössä käyttäjää).
+
+Käyttäjä (toimii myös ilman käyttäjää) voi käyttää hakukonetta ja etsiä vihollisen nimen, materiaalin tai materiaalien määrän mukaan käyttäjien tekemiä tietokohteita (oikeastaan voisi hakea mitä tahansa kunhan haun sisältö löytyy vihollisen nimestä tai mahdollisista palkinnoista)
+
+# Tulevat toiminnot:
 Käyttäjäsivu jokaiselle käyttäjälle, mikä listaa kyseisen käyttäjän lisäämät tietokohteet sekä luku lisättyjen tietokohteiden määrästä.
 
 Käyttäjä pystyy valitsemaan jokaiselle viholliselle luokittelun, joka kertoo missä vihollisen voi löytää (Esim. "Indoors" tai "Outdoors")
@@ -16,3 +31,8 @@ Käyttäjä pystyy valitsemaan jokaiselle viholliselle luokittelun, joka kertoo 
 Käyttäjät voivat jättää kommentteja toisten (tai omiin) vihollisten tietokohteisiin, jossa voivat antaa uutta tietoa alkuperäiseen tietokohteeseen (esim. x vihollinen pudotti minulla 3 y materiaalia, voitko päivittää tietokohdetta?).
 
 Tässä pääasiallinen tietokohde on eri vihollisten tiedot, ja toissijainen tietokohde on kommentit
+
+# Inspiraatiot ja lähteet
+Sovellusta pääosin kehitettiin samoin tavoin kuin Antti Laaksosen videosarjassa
+
+Lisäksi tietysti myös kurssimateriaalista on hyödynnetty joitakin kohtia, ja CurreChattia on hyödynnetty luomaan databasen muodostaminen Windows-ympäristössä
