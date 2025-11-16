@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tietokohteen poistaminen</title>
+</head>
+
+<body>
+   <h1>Tietokohteen poistaminen</h1> 
+  <form action="/delete_item/{{  item.id  }}" method="post">
+    <p>Valittu: {{ item.enemy_name }}</p>
+    <p>Haluatko varmasti poistaa tämän tietokohteen ikuisesti?</p>
+    <input type="submit" name="delete" value="Kyllä">
+    <input type="submit" name="back" value="En">
+  </form>
+</body>
+
+</html>

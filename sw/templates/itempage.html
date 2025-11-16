@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{ item.enemy_name }}</title>
+</head>
+
+<body>
+<h1>{{ item.enemy_name }}</h1>
+{% if session.user_id == item.user_id%}
+<a href="/edit_item/{{item.id}}">Muokkaa</a>
+<a href="/delete_item/{{item.id}}">Poista</a>
+{% endif %}
+<p>
+--------------------------------------------
+</p>
+<p>Tuhoutuessaan pudottaa:</p>
+<p>{{ item.drops }}</p>
+<p>
+--------------------------------------------
+</p>
+<p>Tietokohteen lisännyt käyttäjä "{{ item.username }}"</p>
+<p>
+--------------------------------------------
+</p>
+<p>
+    <a href="/">Takaisin etusivulle</a>
+</p>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Muokkaa tietokohdetta</title>
+</head>
+
+<body>
+   <h1>Muokkaa tietokohteen tietoja</h1> 
+  <form action="/update_item" method="post">
+    <p>
+      Vihollistyyppi <br />
+      <input type="text" name="enemy_name" value="{{  item.enemy_name  }}"/>
+    </p>
+    <p>
+      Saatavat materiaalit <br />
+      <textarea name="drops" rows="8" cols="40">{{  item.drops  }}</textarea>
+    </p>
+    <input type="hidden" name="item_id" value="{{  item.id  }}"/>
+    <input type="submit" value="Päivitä tietokohdetta" />
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hakukone</title>
+</head>
+
+<body>
+   <h1>Tietokohteiden etsiminen</h1> 
+   <form action="/find_item" method="get">
+   <p>
+    Hakusana (Vihollinen, materiaali tai niiden määrä): <input type="text" name="query" value="{{query}}">
+   </p>
+   <input type="submit" value="Etsi">
+ </form>
+ <p>
+    <a href="/">Takaisin</a>
+ </p>
+ {% if query %}
+ <h2>Hakutulokset:</h2>
+ <ul>
+    {% for item in results %}
+    <li><a href="/item/{{ item.id }}">{{ item.enemy_name }}</a></li>
+    {% endfor %}
+ </ul>
+ {% endif %}
+</body>
+
+</html>

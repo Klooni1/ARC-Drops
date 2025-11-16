@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tervetuloa Sivulle</title>
+</head>
+
+<body>
+  <h1>ARC Indeksi</h1>
+  {% if session.username %}
+  <p>
+    Olet kirjautunut käyttäjällä {{ session.username }} (ID: {{ session.user_id }})
+  </p>
+  {% endif %}
+  {% if not session.username %}
+  <p>
+    Et ole kirjautunut sisään
+  </p>
+  {% endif %}
+  <p>
+    <a href="/login">Kirjaudu sisään</a>
+    <a href="/logout">Kirjaudu ulos</a>
+    <a href="/register">Eikö ole tunnusta? Luo uusi</a>
+  </p>
+  <p>
+    --------------------------------------------
+  </p>
+  <p>
+    <a href="/new_item">Luo uusi tietokohde</a>
+    <a href="/find_item">Etsi tietokohteita</a>
+  </p>
+  <p>
+    --------------------------------------------
+  </p>
+  <h2>Lisätyt viholliset</h2>
+  <ul>
+    {% for item in itemhandler %}
+    <li><a href="/item/{{  item.id  }}">{{  item.enemy_name  }}</a></li>
+    {% endfor %}
+  </ul>
+</body>
+
+</html>
