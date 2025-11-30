@@ -14,9 +14,10 @@ CREATE TABLE items (
 
 CREATE TABLE comments (
     id INTEGER PRIMARY KEY,
-    item_id INTEGER REFERENCES items,
+    item_id INTEGER REFERENCES items ON DELETE CASCADE,
     user_id INTEGER REFERENCES users,
     username TEXT,
     message TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
