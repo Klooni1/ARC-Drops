@@ -23,16 +23,13 @@ Kaikkien käyttäjien lisäämät viholliset ovat nähtävissä kaikille (myös 
 
 Käyttäjä (toimii myös ilman käyttäjää) voi käyttää hakukonetta ja etsiä vihollisen nimen, materiaalin tai materiaalien määrän mukaan käyttäjien tekemiä tietokohteita (oikeastaan voisi hakea mitä tahansa kunhan haun sisältö löytyy vihollisen nimestä tai mahdollisista palkinnoista)
 
-# Tulevat toiminnot:
-Käyttäjäsivu jokaiselle käyttäjälle, mikä listaa kyseisen käyttäjän lisäämät tietokohteet sekä luku lisättyjen tietokohteiden määrästä.
-
-Käyttäjä pystyy valitsemaan jokaiselle viholliselle luokittelun, joka kertoo missä vihollisen voi löytää (Esim. "Indoors" tai "Outdoors")
-
 Käyttäjät voivat jättää kommentteja toisten (tai omiin) vihollisten tietokohteisiin, jossa voivat antaa uutta tietoa alkuperäiseen tietokohteeseen (esim. x vihollinen pudotti minulla 3 y materiaalia, voitko päivittää tietokohdetta?).
 
-Tässä pääasiallinen tietokohde on eri vihollisten tiedot, ja toissijainen tietokohde on kommentit
+Käyttäjäsivu jokaiselle käyttäjälle, mikä listaa kyseisen käyttäjän lisäämät tietokohteet sekä luku lisättyjen tietokohteiden ja kommenttien määrästä.
+
+Käyttäjä pystyy valitsemaan jokaiselle viholliselle luokittelun, joka kertoo mistä vihollisen voi löytää (Esim. "Indoors" tai "Outdoors")
 
 # Inspiraatiot ja lähteet
 Sovellusta pääosin kehitettiin samoin tavoin kuin Antti Laaksosen videosarjassa
 
-Lisäksi tietysti myös kurssimateriaalista on hyödynnetty joitakin kohtia, ja CurreChattia on hyödynnetty luomaan databasen muodostaminen Windows-ympäristössä
+Lisäksi tietysti myös kurssimateriaalista on hyödynnetty joitakin kohtia, ja CurreChattia on hyödynnetty luomaan databasen muodostaminen Windows-ympäristössä ja korjaamaan muita bugeja
