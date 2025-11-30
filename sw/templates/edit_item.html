@@ -8,15 +8,24 @@
 <body>
    <h1>Muokkaa tietokohteen tietoja</h1> 
   <form action="/update_item" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
     <p>
       Vihollistyyppi <br />
-      <input type="text" name="enemy_name" value="{{  item.enemy_name  }}"/>
+      <input type="text" name="enemy_name" value="{{ item.enemy_name }}" required />
     </p>
     <p>
       Saatavat materiaalit <br />
-      <textarea name="drops" rows="8" cols="40">{{  item.drops  }}</textarea>
+      <textarea name="drops" rows="8" cols="40" required>{{ item.drops }}</textarea>
     </p>
-    <input type="hidden" name="item_id" value="{{  item.id  }}"/>
+    <p>
+      Mistä vihollisen voi löytää? <br />
+      <input type="radio" name="tag" value="indoors" required 
+        {% if item.tag == 'indoors' %}checked{% endif %}> Indoors<br>
+      <input type="radio" name="tag" value="outdoors" required 
+        {% if item.tag == 'outdoors' %}checked{% endif %}> Outdoors<br>
+    </p>
+
+    <input type="hidden" name="item_id" value="{{ item.id }}" />
     <input type="submit" value="Päivitä tietokohdetta" />
   </form>
 </body>

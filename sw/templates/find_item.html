@@ -8,22 +8,38 @@
 <body>
    <h1>Tietokohteiden etsiminen</h1> 
    <form action="/find_item" method="get">
+       <p>
+           Hae nimen tai materiaalin mukaan: 
+           <input type="text" name="query" value="{{ query }}">
+       </p>
+
+       <p>
+           Hae sijainnin mukaan: 
+           <select name="tag">
+               <option value="" {% if selected_tag == "" %}selected{% endif %}>Both</option>
+               <option value="indoors" {% if selected_tag == "indoors" %}selected{% endif %}>Indoors</option>
+               <option value="outdoors" {% if selected_tag == "outdoors" %}selected{% endif %}>Outdoors</option>
+           </select>
+       </p>
+
+       <input type="submit" value="Etsi">
+   </form>
    <p>
-    Hakusana (Vihollinen, materiaali tai niiden määrä): <input type="text" name="query" value="{{query}}">
+   <a href="/">Takaisin etusivulle</a>
    </p>
-   <input type="submit" value="Etsi">
- </form>
- <p>
-    <a href="/">Takaisin</a>
- </p>
- {% if query %}
- <h2>Hakutulokset:</h2>
- <ul>
-    {% for item in results %}
-    <li><a href="/item/{{ item.id }}">{{ item.enemy_name }}</a></li>
-    {% endfor %}
- </ul>
- {% endif %}
+
+    {% if query or selected_tag %}
+       <h2>Hakutulokset:</h2>
+       {% if results %}
+           <ul>
+               {% for item in results %}
+                   <li><a href="/item/{{ item.id }}">{{ item.enemy_name }}</a></li>
+               {% endfor %}
+           </ul>
+       {% else %}
+           <p>Ei löytynyt mitään...</p>
+       {% endif %}
+   {% endif %}
 </body>
 
 </html>

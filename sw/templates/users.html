@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Käyttäjälista</title>
+</head>
+<body>
+
+<h1>Rekisteröidyt käyttäjät</h1>
+
+<ul>
+  {% for user in users %}
+    <li>
+      <a href="/users/{{ user.id }}">{{ user.username }} (ID: {{ user.id }})</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<p><a href="/">Takaisin etusivulle</a></p>
+
+</body>
+</html>

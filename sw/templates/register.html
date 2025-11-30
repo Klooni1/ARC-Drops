@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Rekisteröinti</title>
 </head>
-
 <body>
-  <form action="/create" method="post">
-    <p>
-      Tunnus: <br />
-      <input type="text" name="username" />
-    </p>
-    <p>
-      Salasana: <br />
-      <input type="password" name="password1" />
-    </p>
-    <p>
-      Salasana uudestaan: <br />
-      <input type="password" name="password2" />
-    </p>
-    <input type="submit" value="Luo tunnus" />
-  </form>
-</body>
 
+{% if error %}
+<p>{{ error }}</p>
+{% endif %}
+
+{% if success %}
+<p>{{ success }}<br>
+<a href="/login">Kirjaudu sisään</a></p>
+{% endif %}
+
+<form action="/create" method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+  
+  <p>
+    Tunnus: <br />
+    <input type="text" name="username" required />
+  </p>
+  
+  <p>
+    Salasana: <br />
+    <input type="password" name="password1" required />
+  </p>
+  
+  <p>
+    Salasana uudestaan: <br />
+    <input type="password" name="password2" required />
+  </p>
+  
+  <input type="submit" value="Luo tunnus" />
+</form>
+
+<p>
+  <a href="/">Takaisin etusivulle</a>
+</p>
+
+</body>
 </html>

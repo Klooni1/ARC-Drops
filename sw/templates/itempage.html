@@ -6,26 +6,48 @@
 </head>
 
 <body>
-<h1>{{ item.enemy_name }}</h1>
+<h2>{{ item.enemy_name }}</h2>
+<p>Tuhoutuessaan pudottaa:</p>
+<p>{{ item.drops }}</p>
+<p>Löydettävissä:</p>
+<p>{{ item.tag }}</p>
 {% if session.user_id == item.user_id%}
+<p>
+--------------------------------------------
+<p>
 <a href="/edit_item/{{item.id}}">Muokkaa</a>
 <a href="/delete_item/{{item.id}}">Poista</a>
 {% endif %}
 <p>
 --------------------------------------------
 </p>
-<p>Tuhoutuessaan pudottaa:</p>
-<p>{{ item.drops }}</p>
-<p>
---------------------------------------------
-</p>
 <p>Tietokohteen lisännyt käyttäjä "{{ item.username }}"</p>
 <p>
---------------------------------------------
+<a href="/">Takaisin etusivulle</a>
 </p>
 <p>
-    <a href="/">Takaisin etusivulle</a>
+--------------------------------------------
 </p>
+<h2>Kommentit</h2>
+{% if session.user_id %}
+<form action="/item/{{ item.id }}" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <p>Kirjoita kommentti:</p>
+    <textarea name="message" rows="4" cols="50" required></textarea><br>
+    <button type="submit">Lähetä kommentti</button>
+</form>
+{% else %}
+<p>Kirjaudu sisään lisätäksesi kommentin.</p>
+{% endif %}
+<ul>
+{% for comment in comments %}
+    <li>
+        <strong>{{ comment.username }} (ID: {{ comment.user_id }})</strong> 
+        <em>({{ comment.created_at }})</em><br>
+        {{ comment.message }}
+    </li>
+{% endfor %}
+</ul>
 </body>
 
 </html>

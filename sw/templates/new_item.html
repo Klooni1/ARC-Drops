@@ -8,16 +8,23 @@
 <body>
    <h1>Uusi tietokohde</h1> 
   <form action="/create_item" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
     <p>
       Vihollistyyppi <br />
-      <input type="text" name="enemy_name" />
+      <input type="text" name="enemy_name" required/>
     </p>
     <p>
       Saatavat materiaalit <br />
-      <textarea name="drops" rows="8" cols="40"></textarea>
+      <textarea name="drops" rows="8" cols="40" required></textarea>
     </p>
+      <label>Mistä vihollisen voi löytää?</label><br>
+    <input type="radio" name="tag" value="indoors" required> Indoors<br>
+    <input type="radio" name="tag" value="outdoors" required> Outdoors<br><br>
     <input type="submit" value="Luo tietokohde" />
   </form>
+  <p>
+  <a href="/">Takaisin etusivulle</a>
+</p>
 </body>
 
 </html>
