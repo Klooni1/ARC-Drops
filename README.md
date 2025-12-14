@@ -14,10 +14,10 @@ Tämän jälkeen sovelluksen pitäisi toimia
 
 Jos haluat resetoida sovelluksen, poista kansiosta sw "database.db" ja tyhjennä selaimesta evästeet.
 
-# Tällä hetkellä toimivat toiminnot:
+# Sovelluksen toiminnot:
 Käyttäjä voi luoda tunnuksen ja salasanan
 
-Käyttäjä voi lisätä/muokata/poistaa omia tietokohteita vihollisista (vihollisten nimet ja mahdolliset palkinnot).
+Käyttäjä voi lisätä/muokata/poistaa omia tietokohteita vihollisista (vihollisten nimet, mahdolliset palkinnot ja mistä vihollisen voi löytää).
 
 Kaikkien käyttäjien lisäämät viholliset ovat nähtävissä kaikille (myös niille, joilla ei ole käytössä käyttäjää).
 
@@ -32,4 +32,4 @@ Käyttäjä pystyy valitsemaan jokaiselle viholliselle luokittelun, joka kertoo 
 # Inspiraatiot ja lähteet
 Sovellusta pääosin kehitettiin samoin tavoin kuin Antti Laaksosen videosarjassa
 
-Lisäksi tietysti myös kurssimateriaalista on hyödynnetty joitakin kohtia, ja CurreChattia on hyödynnetty luomaan databasen muodostaminen Windows-ympäristössä ja korjaamaan muita bugeja
+Lisäksi tietysti myös kurssimateriaalista on hyödynnetty joitakin kohtia, ja CurreChattia on hyödynnetty luomaan databasen muodostaminen Windows-ympäristössä ja korjaamaan joitakin bugeja
